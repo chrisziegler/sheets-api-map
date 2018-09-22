@@ -24,7 +24,6 @@ class App extends Component {
           lng
         }));
         this.setState({ items: locations });
-        console.log(this.state.items);
       });
   }
 

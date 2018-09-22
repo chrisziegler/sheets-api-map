@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { GOOGLE_API } from './keys';
+import { MapPin } from 'react-feather';
 
-const Marker = ({ name }) => <div>{name}</div>;
+import Tooltip from 'rc-tooltip';
+import '../node_modules/rc-tooltip/assets/bootstrap.css';
+
+const Marker = ({ name }) => (
+  <div style={{ height: '50px', width: '50px' }}>
+    <Tooltip
+      placement="top"
+      animation="zoom"
+      overlay={<span>{name}</span>}
+    >
+      <span>
+        {' '}
+        <MapPin />
+      </span>
+    </Tooltip>
+  </div>
+);
 
 export default class MapAndMarkers extends Component {
   render() {
